@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
+    @user = User.create(user_params)
+    
+    if @user.valid?
       flash[:success] = "The account has been created"
-      redirect_to root_url
+      redirect_to signin_url
     else
       render :new
     end

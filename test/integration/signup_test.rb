@@ -12,6 +12,7 @@ class SignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/new'
     assert_select '.field_with_errors'
     assert_not assigns(:user).errors.empty?
+    assert_nil assigns(:user).remember_token
   end
 
   test "signup form with valid fields should create the user" do
@@ -23,7 +24,8 @@ class SignupTest < ActionDispatch::IntegrationTest
                                         password: '12345',
                                         password_confirmation: '12345' } }
     end
+    assert_not assigns(:user).remember_token.empty?
     assert_not flash.empty?
-    assert_redirected_to root_url
+    assert_redirected_to signin_url
   end
 end
