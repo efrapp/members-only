@@ -161,3 +161,15 @@ form input {
     width: 700px;
   }
 }
+
+/* Sign In and Log In forms */
+
+.field_with_errors {
+  label {
+    color: indianred;
+  }
+  
+  input {
+    border: 1px solid #cd5c5c;
+  }
+}
