@@ -8,6 +8,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def is_signed_in?
-    !session[:user_id].nil?
+    !!cookies[:remember_token]
   end
 end

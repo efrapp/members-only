@@ -1,0 +1,16 @@
+<div class="masthead">
+  <div class="inner">
+    <h3 class="masthead-brand"> Members Only! </h3>
+    <nav>
+      <ul class="nav masthead-nav">
+        <% if logged_in? %>
+          <li class="active">
+            <%= link_to 'Sign Out', sign_out_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="active"> <%= link_to 'Sign In', signin_path %> </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>

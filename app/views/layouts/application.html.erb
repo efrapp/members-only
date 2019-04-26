@@ -13,18 +13,7 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-          <div class="masthead">
-            <div class="inner">
-              <h3 class="masthead-brand"> Members Only! </h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"> <%= link_to 'Sign In', signin_path %> </li>
-                  <li> <a heref="#">Option 2</a> </li>
-                  <li> <a heref="#">Option 3</a> </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+          <%= render 'layouts/header' %>
           <%= render 'layouts/flash_messages' %>
           <div class="inner cover">
             <%= yield %>

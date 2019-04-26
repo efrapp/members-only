@@ -22,4 +22,14 @@ class SigninTest < ActionDispatch::IntegrationTest
     assert is_signed_in?
     assert_redirected_to user_url(@non_signed_in)
   end
+
+  test "sign out user" do
+    # Login first
+    post sessions_path, params: { session: { email: @non_signed_in.email,
+                                             password: 'password' }}
+    assert_redirected_to user_url(@non_signed_in)
+    # then sign out
+    delete sign_out_path
+    assert_redirected_to root_url
+  end
 end
