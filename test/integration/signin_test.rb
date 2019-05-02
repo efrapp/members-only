@@ -30,6 +30,6 @@ class SigninTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(@non_signed_in)
     # then sign out
     delete sign_out_path
-    assert_redirected_to root_url
+    assert_redirected_to signin_url
   end
 end

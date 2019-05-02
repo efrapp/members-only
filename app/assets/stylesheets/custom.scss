@@ -162,7 +162,7 @@ form input {
   }
 }
 
-/* Sign In and Log In forms */
+/* Forms */
 
 .field_with_errors {
   label {
@@ -172,4 +172,8 @@ form input {
   input {
     border: 1px solid #cd5c5c;
   }
+}
+
+textarea {
+  margin-bottom: 20px;
 }

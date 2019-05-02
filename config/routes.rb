@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   delete '/sign_out', to: 'sessions#delete'
-  resources :users
+  resources :users do
+    resources :posts, only: [:new, :index, :create]
+  end
   resources :sessions, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
