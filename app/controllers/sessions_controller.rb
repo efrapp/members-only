@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :check_signin, only: [:new, :create]
   def new
   end
 
@@ -20,4 +21,10 @@ class SessionsController < ApplicationController
     flash[:success] = "Successfuly signed out."
     redirect_to signin_url
   end
+
+  private
+
+    def check_signin
+      redirect_to(user_path(current_user)) if signed_in?
+    end
 end
