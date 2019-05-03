@@ -1,0 +1,7 @@
+<div class="posts">
+  <h2 class="title"><%= post.title.capitalize %></h2>
+  <blockquote class="content"><%= post.body %></blockquote>
+  <% if signed_in? %>
+    <p class="author text-right"><%= post.user.name.capitalize %>
+  <% end %>
+</div>

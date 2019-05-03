@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
-  user: one
+one_post:
+  title: 'My first post'
+  body: 'Content of my first post'
+  user: efrain
 
-two:
-  title: MyString
-  body: MyText
-  user: two
+older_post:
+  title: 'My second post'
+  body: 'Content for second post'
+  created_at: <%= 5.minutes.ago %>
+  user: efrain

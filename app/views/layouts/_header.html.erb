@@ -1,6 +1,6 @@
 <div class="masthead">
   <div class="inner">
-    <h3 class="masthead-brand"> Members Only! </h3>
+    <h3 class="masthead-brand"><%= link_to "Members Only!", signup_path %></h3>
     <nav>
       <ul class="nav masthead-nav">
         <% if signed_in? %>
@@ -8,9 +8,14 @@
             <%= link_to "#{current_user.name.capitalize}", user_path(current_user) %>
           </li>
           <li>
+            <%= link_to "New post", new_user_post_path(current_user) %>
+          </li>
+          <li><%= link_to 'All Posts', posts_path %></li>
+          <li>
             <%= link_to 'Sign Out', sign_out_path, method: :delete %>
           </li>
         <% else %>
+          <li><%= link_to 'All Posts', posts_path %></li>
           <li class="active"> <%= link_to 'Sign In', signin_path %> </li>
         <% end %>
       </ul>

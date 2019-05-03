@@ -36,7 +36,6 @@ body {
 }
 body {
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
 
 form input {
@@ -137,6 +136,8 @@ form input {
  @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
+    background-color: #333;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
   }
@@ -176,4 +177,20 @@ form input {
 
 textarea {
   margin-bottom: 20px;
+}
+
+/* Potst */
+
+.posts {
+
+  color: #333;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+
+  .author {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }

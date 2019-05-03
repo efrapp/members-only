@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :check_authentication, only: :show
+  before_action :check_signup, only: [:new, :create]
   def new
     @user = User.new
   end
@@ -23,5 +25,14 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user)
             .permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def check_authentication
+      redirect_to(root_url) unless signed_in?
+    end
+
+    # If a user is already signed in, we don't need to show signup page
+    def check_signup
+      redirect_to(user_path(current_user)) if signed_in?
     end
 end

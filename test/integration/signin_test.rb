@@ -31,5 +31,26 @@ class SigninTest < ActionDispatch::IntegrationTest
     # then sign out
     delete sign_out_path
     assert_redirected_to signin_url
+    assert_not is_signed_in?
+  end
+
+  test "non signed in user should access only to post index view" do
+    get user_url(@non_signed_in)
+    assert_redirected_to root_url
+    get new_user_post_url(@non_signed_in)
+    assert_redirected_to root_url
+    get user_posts_url(@non_signed_in)
+    assert_response :success
+  end
+
+  test "sign in user should access to all views" do
+    sign_in_as(@non_signed_in, 'password')
+    assert is_signed_in?
+    get user_url(@non_signed_in)
+    assert_response :success
+    get new_user_post_url(@non_signed_in)
+    assert_response :success
+    get user_posts_url(@non_signed_in)
+    assert_response :success
   end
 end

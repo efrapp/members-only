@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :check_authentication, except: :index
   before_action :get_user, only: [:new, :create]
   before_action :verify_user, only: [:new, :create]
   def new
@@ -6,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.all.order_by_recent
   end
 
   def create
@@ -26,9 +28,16 @@ class PostsController < ApplicationController
     end
   
     def verify_user
-      unless signed_in? && current_user?(@user)
+      unless current_user?(@user)
         flash[:warning] = 'Access denied.'
         redirect_to @user
+      end
+    end
+
+    def check_authentication
+      unless signed_in?
+        flash[:warning] = 'Please signin first.'
+        redirect_to root_url
       end
     end
 

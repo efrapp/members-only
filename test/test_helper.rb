@@ -15,7 +15,8 @@ class ActiveSupport::TestCase
     # This line won't work for integretation tests because the session hash
     # isn't known there (we need to define it in a controller, helper, etc)
     # be we can check its information. For unit test we can assign and check
-    #  the session hash session[:user_id] = user.id
+    # the session hash 
+    # session[:user_id] = user.id
   end
 
   def is_signed_in?
