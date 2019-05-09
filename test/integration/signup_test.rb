@@ -26,6 +26,6 @@ class SignupTest < ActionDispatch::IntegrationTest
     end
     assert_not assigns(:user).remember_token.empty?
     assert_not flash.empty?
-    assert_redirected_to signin_url
+    assert_redirected_to assigns(:user)
   end
 end

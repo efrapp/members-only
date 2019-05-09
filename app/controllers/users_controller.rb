@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     
     if @user.valid?
       flash[:success] = "The account has been created"
-      redirect_to signin_url
+      sign_in(@user)
+      redirect_to @user
     else
       render :new
     end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order_by_recent
+    @posts = Post.all
   end
 
   def create
