@@ -8,6 +8,29 @@
 * Authentication
 * Authorization
 
+## Install
+
+Clone repository:
+```
+git clone <repository path>
+```
+Move to folder and install dependencies
+```
+cd members_ony && bundle install
+```
+Migrate database
+```
+rails db:migrate
+```
+Run web server
+```
+rails s
+```
+Finally go to `http://localhost:3000/` in the web browser
+
+## Ruby Version
+* 2.5.3
+
 ## Contributors
 
 * [Efrain Pinto](https://github.com/efrapp)
