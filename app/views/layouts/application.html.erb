@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title><%= yield(:title) || "Members Only App" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render 'layouts/header' %>
+          <%= render 'layouts/flash_messages' %>
+          <div class="inner cover">
+            <%= yield %>
+          </div>
+          <div class="mastfoot">
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,24 +1,37 @@
-# README
+# Members Only Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Application to build an exclusive clubhouse where your members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-Things you may want to cover:
+## Concepts Applied
 
-* Ruby version
+* Associations
+* Authentication
+* Authorization
 
-* System dependencies
+## Install
 
-* Configuration
+Clone repository:
+```
+git clone <repository path>
+```
+Move to folder and install dependencies
+```
+cd members_ony && bundle install
+```
+Migrate database
+```
+rails db:migrate
+```
+Run web server
+```
+rails s
+```
+Finally go to `http://localhost:3000/` in the web browser
 
-* Database creation
+## Ruby Version
+* 2.5.3
 
-* Database initialization
+## Contributors
 
-* How to run the test suite
+* [Efrain Pinto](https://github.com/efrapp)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

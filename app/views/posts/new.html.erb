@@ -1,0 +1,19 @@
+<%= provide(:title, 'Create New Post')%>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">Create new post</h1>
+    <%= form_for [@user, @post] do |f| %>
+      <%= render 'layouts/errors', object: @post %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 10, class: 'form-control' %>
+
+      <%= f.submit 'Create Post', class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>
+
